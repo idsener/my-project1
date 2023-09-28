@@ -28,12 +28,12 @@ jobs:
     - name: Build with Gradle
       run: ./gradlew build
 
-    - uses: mr-smithers-excellent/docker-build-push@v6
+    - uses: mr-smithers-excellent/docker-build-push@v4
       name: Build & push Docker image
       with:
        image: dsener/test
        tags: v1, latest
-       registry: registry-url.io
+       registry: docker.io
        dockerfile: Dockerfile.ci
        username: ${{ secrets.DOCKER_USERNAME }}
        password: ${{ secrets.DOCKER_PASSWORD }}
